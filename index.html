@@ -35,11 +35,6 @@
         .company-info {
             text-align: left;
         }
-        .company-info h1 {
-            margin: 0;
-            color: #0033a0; /* Podbeta Blue */
-            font-size: 28px;
-        }
         .invoice-details {
             text-align: right;
         }
@@ -53,14 +48,8 @@
             justify-content: space-between;
             margin-bottom: 40px;
         }
-        .bill-to {
-            text-align: left;
-        }
         .bill-to strong, .invoice-dates strong {
             color: #555;
-        }
-        .invoice-dates {
-            text-align: right;
         }
         .item-table {
             width: 100%;
@@ -117,6 +106,20 @@
             padding-bottom: 5px;
             display: inline-block;
         }
+        
+        /* ADDED: Print-friendly styles */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+            .invoice-container {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                border-radius: 0;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -139,12 +142,14 @@
         <div class="billing-info">
             <div class="bill-to">
                 <strong>BILL TO:</strong><br>
-                Embassy of the Federal Republic of Nigeria – <br>
-                Na Chahadle 917/32 160 00 Prague 6
+                Embassy of the Federal Republic of Nigeria<br>
+                Na Zátorce 18<br>
+                160 00 Praha 6 - Bubeneč, Czechia
             </div>
             <div class="invoice-dates">
                 <strong>Invoice No.:</strong> RGIT-001<br>
-                <strong>Date:</strong> October 2, 2025<br>
+                <strong>Date:</strong> October 15, 2025<br>
+                <strong>Due Date:</strong> [Insert Due Date]
             </div>
         </div>
 
@@ -214,9 +219,9 @@
                 </tr>
             </tbody>
         </table>
-
+        
         <div class="totals">
-             <table>
+            <table>
                 <tr>
                     <td>Subtotal:</td>
                     <td class="amount">$6,950.00</td>
@@ -227,13 +232,27 @@
                 </tr>
                 <tr class="total-due">
                     <td><strong>Total Amount Due:</strong></td>
-                    <td class="amount"><strong>$5,800.00</strong></td>
+                    <td class="amount"><strong>$6,950.00</strong></td>
                 </tr>
             </table>
-                <div class="amount-in-words">
-            Five Thousand Eight Hundred US Dollars Only
         </div>
+
+        <div class="amount-in-words">
+            Six Thousand Nine Hundred Fifty US Dollars Only
+        </div>
+
         <div class="footer">
+            <h3>Payment Information</h3>
+            <p>
+                <strong>Payment Terms:</strong><br>
+                70% upfront before project commencement.<br>
+                30% upon completion and delivery.
+            </p>
+            <p>
+                <strong>Payment to:</strong><br>
+                [Insert Rex Global Integrated Technology Bank Details]
+            </p>
+            <p>
                 <strong>Notes:</strong><br>
                 This invoice covers website development only. Ongoing maintenance and updates can be provided under a separate contract.
             </p>
@@ -241,4 +260,3 @@
     </div>
 </body>
 </html>
-
